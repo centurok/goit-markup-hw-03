@@ -3,6 +3,10 @@
   --bgd-very-dark-grayish-blue: #2f303a;
   --bgd-light-grayish-blue: #f5f4fa;
   --bgd-white: #ffffff;
+  --bgd-blue: #2196f3;
+  --border: #ececec;
+  --shadow: #a1a1a5;
+
   /* text  */
   --txt-blue: #2196f3;
   --txt-mostly-black: #212121;
@@ -13,20 +17,72 @@
 }
 
 /* constant */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--txt-mostly-black);
   background-color: var(--bgd-white);
-  letter-spacing: 0.03;
+  letter-spacing: 0.03em;
 }
-/* header */
+p,
+ul,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 auto;
+  padding: 0;
+}
 
-.link {
+.list {
   list-style-type: none;
 }
 
-.hdr-logo {
+.link {
   text-decoration: none;
+  color: var(--txt-mostly-black);
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+img {
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.logo {
+  text-decoration: none;
+}
+/* header */
+.header {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--border);
+}
+.hdr-container {
+  display: flex;
+}
+.hdr-logo {
+  padding: 24px 20px 25px 20px;
+  margin-right: 73px;
 }
 
 .hdr-first-logo {
@@ -44,11 +100,29 @@ body {
   font-size: 26px;
   line-height: 1.19;
 }
-.link:hover,
-.link:focus {
+
+.hdr-nav {
+  display: flex;
+}
+
+.hdr-list {
+  display: flex;
+  align-items: center;
+}
+
+.link-item {
+  padding: 32px 0px 32px 0px;
+}
+
+.link-item:not(:first-child) {
+  margin-left: 50px;
+}
+
+.hdr-link:hover,
+.hdr-link:focus {
   color: var(--txt-blue);
 }
-.link {
+.hdr-link {
   color: var(--txt-mostly-black);
   font-weight: 500;
   font-size: 14px;
@@ -57,17 +131,27 @@ body {
   text-decoration: none;
 }
 
-.links .link.current {
+.hdr-list .link.current {
   color: var(--txt-blue);
 }
 
-.link-item,
+.hdr-contacts .link-item,
 .hdr-contacts {
   list-style: none;
 }
 
+.hdr-contacts-list {
+  margin-left: 315px;
+}
+.hdr-contacts {
+  display: flex;
+  align-items: center;
+}
+.hdr-contacts:not(:last-child) {
+  padding-right: 50px;
+}
+
 .contact-link {
-  text-decoration: none;
   color: var(--txt-dark-gray);
   font-weight: 500;
   font-size: 14px;
@@ -79,9 +163,12 @@ body {
 .contact-link:focus {
   color: var(--txt-blue);
 }
+
 /* Main Studio */
 .hero-section {
   background-color: var(--bgd-very-dark-grayish-blue);
+  padding: 200px 0px;
+  text-align: center;
 }
 
 .hero-title {
@@ -92,6 +179,8 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--txt-white);
+  max-width: 660px;
+  margin-bottom: 30px;
 }
 
 .hero-button {
@@ -103,28 +192,56 @@ body {
   letter-spacing: 0.06em;
   cursor: pointer;
   border: none;
+  padding: 10px 32px;
+}
+/* Dignity company */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.dignity-list {
+  display: flex;
 }
 
-.container-item,
-.about-company-item {
-  list-style: none;
-}
-.container-item-title {
+.dignity-item-title {
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
 
-.container-item-text {
+.dignity-text {
+  font-weight: bold;
   font-size: 14px;
   line-height: 1.71;
   color: var(--txt-dark-gray);
+  max-width: 270px;
 }
+/* about company */
 
+.section.about-company {
+  padding-top: 0;
+}
 .about-company-title {
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
+  margin-bottom: 50px;
+}
+.about-list {
+  display: flex;
+}
+
+.about-item {
+  list-style: none;
 }
 
 .team {
@@ -132,13 +249,25 @@ body {
 }
 
 .title-team {
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
+  margin-bottom: 50px;
+}
+
+.team-list {
+  display: flex;
 }
 
 .team-member {
   list-style: none;
+}
+.team-title {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--bgd-white);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .title-member {
@@ -146,6 +275,7 @@ body {
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .about-member {
@@ -159,12 +289,20 @@ body {
 .footer {
   background-color: var(--bgd-very-dark-grayish-blue);
 }
+.footer-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
 .address {
   font-style: normal;
 }
+.footer-section .logo {
+  display: inline-block;
+  padding-bottom: 20px;
+}
 
-.ftr-first-logo {
+.logo .ftr-first-logo {
   font-family: 'Raleway', sans-serif;
   color: var(--txt-blue);
   font-size: 26px;
@@ -182,28 +320,44 @@ body {
   line-height: 1.71;
   color: var(--txt-white);
   text-decoration: none;
+  padding-bottom: 9px;
 }
 
-.contact-ftr {
+.ftr-contacts {
   list-style: none;
 }
 
-.contact-link-footer:focus,
-.contact-link-footer:hover {
+.address .contact-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.contact-link:focus,
+.contact-link:hover {
   color: var(--txt-blue);
 }
 /* Main Portfolio */
-
+.main-section {
+}
+.list-button {
+  display: flex;
+  justify-content: center;
+}
 .button {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
-  letter-spacing: 0.03em;
-  background-color: var(--bgd-Light-grayish-blue);
   border: none;
   cursor: pointer;
+  padding: 6px 22px;
+  border-radius: 4px;
+  margin: 0;
+}
+.list-button .button.current {
+  background-color: var(--bgd-blue);
 }
 .button:focus,
 .button:hover {
@@ -214,17 +368,42 @@ body {
 .button-item,
 .project-item {
   list-style: none;
+  margin: 0px;
+}
+.button-item:not(:last-child) {
+  margin-right: 8px;
+}
+.filter-btns {
+  margin-bottom: 56px;
 }
 
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-item {
+  margin-right: 30px;
+  margin-top: calc (-1 * 30px);
+}
+
+.projects-list > .project-item {
+  display: flex;
+  flex-basis: ;
+}
+
+.project-link {
+  text-decoration: none;
+}
 .project-title {
   font-weight: bold;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  color: var(--txt-mostly-black);
 }
 .project-about {
   font-size: 16px;
   line-height: 1.87;
-  letter-spacing: 0.03em;
   color: var(--txt-dark-gray);
 }
