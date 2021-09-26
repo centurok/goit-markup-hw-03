@@ -5,6 +5,7 @@
   --bgd-white: #ffffff;
   --bgd-blue: #2196f3;
   --border: #ececec;
+  --border-portf: #eeeeee;
   --shadow: #a1a1a5;
 
   /* text  */
@@ -62,6 +63,7 @@ img {
   margin: 0 auto;
   padding: 0;
   display: block;
+  max-width: 100%;
 }
 
 .section {
@@ -358,6 +360,7 @@ img {
 }
 .list-button .button.current {
   background-color: var(--bgd-blue);
+  color: var(--txt-white);
 }
 .button:focus,
 .button:hover {
@@ -376,20 +379,21 @@ img {
 .filter-btns {
   margin-bottom: 56px;
 }
-
+.port-conteiner {
+  padding: 0;
+}
 .projects-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
-.project-item {
-  margin-right: 30px;
-  margin-top: calc (-1 * 30px);
+  margin-left: -30px;
+  margin-top: -30px;
 }
 
 .projects-list > .project-item {
   display: flex;
-  flex-basis: ;
+  flex-basis: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .project-link {
@@ -401,9 +405,15 @@ img {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--txt-mostly-black);
+  margin-top: 4px;
 }
 .project-about {
   font-size: 16px;
   line-height: 1.87;
   color: var(--txt-dark-gray);
+}
+.project-text {
+  padding: 20px 24px;
+  border: 1px solid var(--border-portf);
+  border-top: none;
 }
