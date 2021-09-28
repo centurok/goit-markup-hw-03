@@ -137,10 +137,6 @@ img {
   padding: 32px 0px 32px 0px;
 }
 
-.link-item:last-child {
-  margin-right: 331px;
-}
-
 .hdr-list .link.current {
   color: var(--txt-blue);
 }
@@ -153,6 +149,7 @@ img {
 .hdr-contacts {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 .hdr-contacts:not(:last-child) {
   margin-right: 50px;
@@ -222,6 +219,9 @@ img {
 .dignity-list {
   display: flex;
 }
+.dignity-list > .dignity-item {
+  flex-basis: auto;
+}
 
 .dignity-item:not(:last-child) {
   margin-right: 30px;
@@ -283,6 +283,9 @@ img {
 .team-list {
   display: flex;
 }
+.team-list > .team-member {
+  flex-basis: auto;
+}
 
 .team-member {
   list-style: none;
@@ -306,7 +309,7 @@ img {
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .about-member {
@@ -338,6 +341,10 @@ img {
   color: var(--txt-blue);
   font-size: 26px;
   line-height: 1.19;
+}
+.ftr-address:hover,
+.ftr-address:focus {
+  color: var(--txt-blue);
 }
 
 .ftr-second-logo {
@@ -382,6 +389,7 @@ img {
 .list-button {
   display: flex;
   justify-content: center;
+  margin-bottom: 56px;
 }
 .button {
   font-family: 'Roboto', sans-serif;
@@ -413,9 +421,6 @@ img {
 .button-item:not(:last-child) {
   margin-right: 8px;
 }
-.filter-btns {
-  margin-bottom: 56px;
-}
 
 .projects-list {
   display: flex;
@@ -440,7 +445,7 @@ img {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--txt-mostly-black);
-  margin-top: 4px;
+  margin-bottom: 4px;
 }
 .project-about {
   font-size: 16px;
